@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arjun | Architecture – Launching Soon</title>
+    <meta name="description" content="Arjun architecture studio – our new website is launching soon.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --cream: #f5f0e8;
+            --ivory: #fbf8f3;
+            --brown: #7a4f45;
+            --brown-soft: #8b625a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+        
+        html,
+        body {
+            height: 100%
+        }
+        
+        body {
+            font-family: 'Jost', sans-serif;
+            color: var(--brown);
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 32px 20px;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(ellipse 65% 55% at 5% 5%, #fffdf8 0%, transparent 55%), radial-gradient(ellipse 50% 50% at 95% 3%, #f0e5d4 0%, transparent 55%), radial-gradient(ellipse 40% 50% at 98% 50%, #f5e9d8 0%, transparent 55%), radial-gradient(ellipse 55% 50% at 95% 97%, #f2e8d8 0%, transparent 55%), radial-gradient(ellipse 55% 45% at 5% 97%, #faf4e8 0%, transparent 55%), radial-gradient(ellipse 38% 45% at 2% 50%, #ede2ce 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 50% 50%, #fffbf3 0%, transparent 65%), linear-gradient(155deg, #f6ede0 0%, #fdf8f0 25%, #f3e9d9 50%, #faf5ea 75%, #f0e6d6 100%);
+        }
+        
+        .orbs {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden
+        }
+        
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            animation: pulse var(--pd, 14s) ease-in-out infinite alternate;
+            animation-delay: var(--pDl, 0s);
+            opacity: var(--po, .45);
+        }
+        
+        .orb1 {
+            width: 55vw;
+            height: 55vw;
+            top: -15%;
+            left: -10%;
+            background: radial-gradient(circle, #e8d5be, #f5ede0, transparent 70%);
+            --pd: 16s;
+            --po: .5
+        }
+        
+        .orb2 {
+            width: 50vw;
+            height: 50vw;
+            top: -10%;
+            right: -12%;
+            background: radial-gradient(circle, #dfd0bc, #f0e6d6, transparent 70%);
+            --pd: 20s;
+            --pDl: -5s;
+            --po: .45
+        }
+        
+        .orb3 {
+            width: 60vw;
+            height: 45vw;
+            bottom: -15%;
+            left: -10%;
+            background: radial-gradient(circle, #e5d9c8, #f2ece0, transparent 70%);
+            --pd: 18s;
+            --pDl: -8s;
+            --po: .4
+        }
+        
+        .orb4 {
+            width: 55vw;
+            height: 55vw;
+            bottom: -18%;
+            right: -10%;
+            background: radial-gradient(circle, #ddd0bb, #ede3d2, transparent 70%);
+            --pd: 22s;
+            --pDl: -3s;
+            --po: .42
+        }
+        
+        .orb5 {
+            width: 40vw;
+            height: 40vw;
+            top: 35%;
+            left: 35%;
+            background: radial-gradient(circle, #faf5ec, #fff9f0, transparent 70%);
+            --pd: 12s;
+            --pDl: -6s;
+            --po: .6
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1) translate(0, 0)
+            }
+            50% {
+                transform: scale(1.08) translate(2%, 3%)
+            }
+            100% {
+                transform: scale(.96) translate(-2%, -2%)
+            }
+        }
+        
+        .sheen {
+            position: fixed;
+            inset: -10%;
+            pointer-events: none;
+            z-index: 0;
+            background: repeating-linear-gradient(115deg, transparent 0 100px, rgba(255, 255, 255, .28) 130px, transparent 180px 300px), repeating-linear-gradient(65deg, transparent 0 150px, rgba(200, 185, 160, .08) 190px, transparent 240px 380px);
+            filter: blur(22px);
+            animation: shiftSheen 22s ease-in-out infinite alternate;
+        }
+        
+        @keyframes shiftSheen {
+            from {
+                transform: translateX(-3%)
+            }
+            to {
+                transform: translateX(3%)
+            }
+        }
+        
+        .tools {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden
+        }
+        
+        .tool {
+            position: absolute;
+            color: var(--brown);
+            opacity: var(--op, .22);
+            width: var(--s, 90px);
+            animation: floatTool var(--d, 9s) ease-in-out infinite;
+            animation-delay: var(--dl, 0s);
+            transform: rotate(var(--r, 0deg));
+        }
+        
+        .tool svg {
+            width: 100%;
+            height: auto;
+            display: block;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        @keyframes floatTool {
+            0%,
+            100% {
+                transform: translateY(0) rotate(var(--r, 0deg))
+            }
+            50% {
+                transform: translateY(-20px) rotate(calc(var(--r, 0deg) + 6deg))
+            }
+        }
+        
+        .t-compass {
+            top: 6%;
+            left: 5%;
+            --s: clamp(62px, 9vw, 130px);
+            --r: -14deg;
+            --d: 11s;
+            --op: .2
+        }
+        
+        .t-square {
+            top: 7%;
+            right: 6%;
+            --s: clamp(60px, 9vw, 124px);
+            --r: 16deg;
+            --d: 13s;
+            --dl: -3s;
+            --op: .18
+        }
+        
+        .t-pencil {
+            top: 42%;
+            right: 4%;
+            --s: clamp(54px, 8vw, 116px);
+            --r: 10deg;
+            --d: 9s;
+            --dl: -5s;
+            --op: .22
+        }
+        
+        .t-building {
+            top: 40%;
+            left: 4%;
+            --s: clamp(54px, 8vw, 110px);
+            --r: -5deg;
+            --d: 12s;
+            --dl: -2s;
+            --op: .2
+        }
+        
+        .t-ruler {
+            bottom: 7%;
+            left: 7%;
+            --s: clamp(80px, 12vw, 170px);
+            --r: -20deg;
+            --d: 14s;
+            --dl: -7s;
+            --op: .18
+        }
+        
+        .t-house {
+            bottom: 7%;
+            right: 7%;
+            --s: clamp(60px, 9vw, 126px);
+            --r: 6deg;
+            --d: 10s;
+            --dl: -4s;
+            --op: .2
+        }
+        
+        .t-arch {
+            top: 72%;
+            left: 50%;
+            margin-left: -5vw;
+            --s: clamp(52px, 8vw, 110px);
+            --r: -3deg;
+            --d: 15s;
+            --dl: -9s;
+            --op: .15
+        }
+        
+        .t-tee {
+            top: 22%;
+            left: 46%;
+            margin-left: -4vw;
+            --s: clamp(58px, 8vw, 118px);
+            --r: 8deg;
+            --d: 11s;
+            --dl: -1s;
+            --op: .14
+        }
+        
+        @media(max-width:600px) {
+            .tool {
+                --op: .13
+            }
+            .t-pencil,
+            .t-building,
+            .t-arch,
+            .t-tee {
+                display: none
+            }
+        }
+        
+        @media(min-width:900px) {
+            .brand {
+                font-size: calc(.8rem + 4px)
+            }
+            .brand span {
+                font-size: calc(.65rem + 4px)
+            }
+            footer {
+                font-size: calc(.72rem + 4px)
+            }
+        }
+        
+        @media(prefers-reduced-motion:reduce) {
+            .tool,
+            .sheen,
+            .orb {
+                animation: none
+            }
+        }
+        
+        main {
+            position: relative;
+            z-index: 2;
+            max-width: 640px;
+            width: 100%
+        }
+        
+        .brand {
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: .8rem;
+            letter-spacing: .34em;
+            text-transform: normal;
+            margin-bottom: clamp(40px, 9vh, 90px);
+        }
+        
+        .brand span {
+            display: block;
+            font-weight: 300;
+            letter-spacing: .42em;
+            font-size: .65rem;
+            margin-top: 5px
+        }
+        
+        h1 {
+            font-family: 'Marcellus', serif;
+            font-weight: 400;
+            font-size: clamp(3rem, 10vw, 5.6rem);
+            line-height: 1.05;
+            letter-spacing: .01em;
+            margin-bottom: 28px;
+        }
+        
+        p {
+            font-weight: 300;
+            font-size: clamp(1rem, 2.4vw, 1.15rem);
+            line-height: 1.75;
+            color: var(--brown-soft);
+            max-width: 440px;
+            margin: 0 auto 36px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #fff;
+            color: var(--brown);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: .78rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            padding: 14px 40px;
+            border-radius: 999px;
+            box-shadow: 0 6px 28px rgba(122, 79, 69, .14);
+            transition: .3s;
+        }
+        
+        .btn:hover {
+            background: var(--brown);
+            color: #fff;
+            transform: translateY(-2px)
+        }
+        
+        .social {
+            display: flex;
+            gap: 22px;
+            justify-content: center;
+            margin-top: clamp(36px, 8vh, 64px)
+        }
+        
+        .social a {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: var(--brown);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            transition: .3s;
+        }
+        
+        .social a:hover {
+            transform: translateY(-3px);
+            background: #5f3b32
+        }
+        
+        .social svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor
+        }
+        
+        footer {
+            margin-top: 36px;
+            font-size: .72rem;
+            letter-spacing: .16em;
+            font-weight: 300;
+            opacity: .68
+        }
+        
+        @media(max-width:480px) {
+            .btn {
+                padding: 13px 30px
+            }
+            .social {
+                gap: 16px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="orbs" aria-hidden="true">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+        <div class="orb orb4"></div>
+        <div class="orb orb5"></div>
+    </div>
+
+
+    <div class="sheen" aria-hidden="true"></div>
+
+
+    <div class="tools" aria-hidden="true">
+
+        <div class="tool t-compass"><svg viewBox="0 0 100 100"><circle cx="50" cy="13" r="4.5"/><path d="M50 9V2M50 18L26 90M50 18L74 90M37 60Q50 68 63 60M26 90l-3 6M74 90l3 6"/></svg></div>
+        <div class="tool t-square"><svg viewBox="0 0 100 100"><path d="M12 90V10L90 90ZM28 76V42L62 76Z"/></svg></div>
+
+        <div class="tool t-pencil"><svg viewBox="0 0 100 100"><path d="M17 83L26 57L73 10L90 27L43 74ZM26 57L43 74M65 20L82 37M20 88l6-3"/></svg></div>
+
+        <div class="tool t-building"><svg viewBox="0 0 100 100"><path d="M6 94H94M20 94V26H56V94M56 44H80V94M28 36H48M28 48H48M28 60H48M28 72H48M62 56H72M62 68H72M62 80H72"/></svg></div>
+
+        <div class="tool t-ruler"><svg viewBox="0 0 100 100"><rect x="3" y="35" width="94" height="30" rx="3"/><path d="M13 35V48M23 35V43M33 35V48M43 35V43M53 35V48M63 35V43M73 35V48M83 35V43"/></svg></div>
+
+        <div class="tool t-house"><svg viewBox="0 0 100 100"><path d="M6 94H94M16 94V44L50 18L84 44V94M42 94V66H58V94M24 54H38V68H24ZM62 54H76V68H62Z"/></svg></div>
+
+        <div class="tool t-arch"><svg viewBox="0 0 100 100"><path d="M10 90V55A40 40 0 0190 55V90M10 90H90M30 90V55A20 20 0 0170 55V90"/></svg></div>
+
+        <div class="tool t-tee"><svg viewBox="0 0 100 100"><path d="M10 18H90M50 18V92M30 18V30M70 18V30"/></svg></div>
+    </div>
+
+    <main>
+        <div class="brand">arjun<span>ARCHITECTURE</span></div>
+        <h1>Launching<br>soon!</h1>
+        <p>We are currently working on our NEW official website. Thoughtful spaces, designed with purpose.</p>
+        <a class="btn" href="mailto:arjun@arjunn.in">Stay tuned</a>
+        <div class="social">
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.2-1 1.1-1H17V2h-2.6C11.4 2 10 3.7 10 6.2V8H8v3.5h2V22h4V11.5h2.7L17 8z"/></svg></a>
+            <a href="https://www.instagram.com/arjunn.co?stkn=MWYxdnBoZWFxdGd6bw==" aria-label="Instagram" target="_blank"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5A4.5 4.5 0 1112 16.5 4.5 4.5 0 0112 7.5zm0 2A2.5 2.5 0 1012 14.5 2.5 2.5 0 0012 9.5zM17.5 6a1 1 0 110 2 1 1 0 010-2z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.5 3A2 2 0 102.5 5 2 2 0 004.5 3zM3 8.5h3V21H3zM9 8.5h2.9v1.7h.1c.4-.8 1.4-1.8 3-1.8 3.2 0 3.8 2.1 3.8 4.8V21h-3v-6.9c0-1.6 0-3.5-2.2-3.5s-2.5 1.7-2.5 3.4V21H9z"/></svg></a>
+        </div>
+        <footer>© 2026 arjunn.in</footer>
+    </main>
+</body>
+
+</html>
