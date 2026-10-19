@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arjunn | Architecture – Page Not Found</title>
+<meta name="description" content="Arjunn architecture – page not found.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f5f0e8;--ivory:#fbf8f3;--brown:#7a4f45;--brown-soft:#8b625a;--brown-light:#c9a99f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+
+body{
+  font-family:'Jost',sans-serif;color:var(--brown);
+  min-height:100vh;min-height:100dvh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:20px;position:relative;overflow:hidden;height:100vh;height:100dvh;
+  background:
+    radial-gradient(ellipse 65% 55% at 5% 5%,   #fffdf8 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 95% 3%,  #f0e5d4 0%, transparent 55%),
+    radial-gradient(ellipse 40% 50% at 98% 50%, #f5e9d8 0%, transparent 55%),
+    radial-gradient(ellipse 55% 50% at 95% 97%, #f2e8d8 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 5% 97%,  #faf4e8 0%, transparent 55%),
+    radial-gradient(ellipse 38% 45% at 2% 50%,  #ede2ce 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 50% 50%, #fffbf3 0%, transparent 65%),
+    linear-gradient(155deg, #f6ede0 0%, #fdf8f0 25%, #f3e9d9 50%, #faf5ea 75%, #f0e6d6 100%);
+}
+
+/* ── animated orbs ── */
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.orb{
+  position:absolute;border-radius:50%;filter:blur(70px);
+  animation:pulse var(--pd,14s) ease-in-out infinite alternate;
+  animation-delay:var(--pDl,0s);opacity:var(--po,.45);
+}
+.orb1{width:55vw;height:55vw;top:-15%;left:-10%;
+      background:radial-gradient(circle,#e8d5be,#f5ede0,transparent 70%);--pd:16s;--po:.5}
+.orb2{width:50vw;height:50vw;top:-10%;right:-12%;
+      background:radial-gradient(circle,#dfd0bc,#f0e6d6,transparent 70%);--pd:20s;--pDl:-5s;--po:.45}
+.orb3{width:60vw;height:45vw;bottom:-15%;left:-10%;
+      background:radial-gradient(circle,#e5d9c8,#f2ece0,transparent 70%);--pd:18s;--pDl:-8s;--po:.4}
+.orb4{width:55vw;height:55vw;bottom:-18%;right:-10%;
+      background:radial-gradient(circle,#ddd0bb,#ede3d2,transparent 70%);--pd:22s;--pDl:-3s;--po:.42}
+.orb5{width:40vw;height:40vw;top:35%;left:35%;
+      background:radial-gradient(circle,#faf5ec,#fff9f0,transparent 70%);--pd:12s;--pDl:-6s;--po:.6}
+@keyframes pulse{
+  0%{transform:scale(1) translate(0,0)}
+  50%{transform:scale(1.08) translate(2%,3%)}
+  100%{transform:scale(.96) translate(-2%,-2%)}
+}
+
+/* ── silk sheen ── */
+.sheen{
+  position:fixed;inset:-10%;pointer-events:none;z-index:0;
+  background:
+    repeating-linear-gradient(115deg,transparent 0 100px,rgba(255,255,255,.28) 130px,transparent 180px 300px),
+    repeating-linear-gradient(65deg,transparent 0 150px,rgba(200,185,160,.08) 190px,transparent 240px 380px);
+  filter:blur(22px);
+  animation:shiftSheen 22s ease-in-out infinite alternate;
+}
+@keyframes shiftSheen{from{transform:translateX(-3%)}to{transform:translateX(3%)}}
+
+/* ── floating tools ── */
+.tools{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.tool{
+  position:absolute;color:var(--brown);opacity:var(--op,.18);width:var(--s,90px);
+  animation:floatTool var(--d,9s) ease-in-out infinite;
+  animation-delay:var(--dl,0s);transform:rotate(var(--r,0deg));
+}
+.tool svg{width:100%;height:auto;display:block;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+@keyframes floatTool{
+  0%,100%{transform:translateY(0)    rotate(var(--r,0deg))}
+  50%    {transform:translateY(-20px) rotate(calc(var(--r,0deg) + 6deg))}
+}
+.t-window      {top:5%;   left:5%;   --s:clamp(58px,9vw,120px); --r:-10deg;--d:11s;           --op:.18}
+.t-question    {top:5%;   right:5%;  --s:clamp(52px,8vw,110px); --r:14deg; --d:13s;--dl:-3s;  --op:.20}
+.t-chain       {top:40%;  right:3%;  --s:clamp(60px,9vw,126px); --r:8deg;  --d:10s;--dl:-5s;  --op:.17}
+.t-door        {top:38%;  left:3%;   --s:clamp(54px,8vw,112px); --r:-6deg; --d:12s;--dl:-2s;  --op:.18}
+.t-map         {bottom:6%;left:6%;   --s:clamp(62px,9vw,128px); --r:-16deg;--d:14s;--dl:-7s;  --op:.16}
+.t-lostcompass {bottom:6%;right:6%;  --s:clamp(60px,9vw,124px); --r:5deg;  --d:9s; --dl:-4s;  --op:.20}
+.t-scroll      {top:70%;  left:46%;  --s:clamp(52px,8vw,110px); --r:-3deg; --d:15s;--dl:-9s;  --op:.14}
+.t-warn        {top:20%;  left:43%;  --s:clamp(50px,8vw,106px); --r:6deg;  --d:11s;--dl:-1s;  --op:.14}
+@media(max-width:600px){
+  .tool{--op:.10}
+  .t-chain,.t-door,.t-scroll,.t-warn{display:none}
+}
+@media(prefers-reduced-motion:reduce){.tool,.sheen,.orb{animation:none}}
+
+/* ── content ── */
+main{position:relative;z-index:2;max-width:680px;width:100%}
+
+
+/* big 404 */
+.error-code{
+  font-family:'Marcellus',serif;font-weight:400;
+  font-size:clamp(6rem,18vw,14rem);line-height:.85;
+  letter-spacing:.04em;
+  /* hollow stroke style */
+  -webkit-text-stroke:2px var(--brown-light);
+  color:transparent;
+  position:relative;
+  margin-bottom:10px;
+  animation:fadeUp .9s ease both;
+}
+/* subtle blueprint grid behind 404 */
+.error-code::before{
+  content:"404";
+  position:absolute;inset:0;
+  font-family:'Marcellus',serif;font-weight:400;
+  -webkit-text-stroke:0;color:rgba(122,79,69,.06);
+  transform:translate(6px,8px);
+  pointer-events:none;
+}
+
+.divider{
+  width:48px;height:1px;background:var(--brown-light);
+  margin:12px auto 14px;opacity:.6;
+  animation:fadeUp .9s .15s ease both;
+}
+
+h1{
+  font-family:'Marcellus',serif;font-weight:400;
+  font-size:clamp(1.4rem,4vw,2.4rem);line-height:1.2;letter-spacing:.02em;
+  margin-bottom:14px;
+  animation:fadeUp .9s .2s ease both;
+}
+p{
+  font-weight:300;font-size:clamp(1rem,2vw,1.15rem);line-height:1.75;
+  color:var(--brown-soft);max-width:480px;margin:0 auto 28px;
+  animation:fadeUp .9s .3s ease both;
+}
+
+/* blueprint sketch illustration */
+.sketch{
+  width:clamp(160px,28vw,260px);margin:0 auto 20px;
+  opacity:.22;animation:fadeUp .9s .1s ease both;
+}
+.sketch svg{width:100%;height:auto;display:block;fill:none;stroke:var(--brown);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* buttons */
+.actions{
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+  animation:fadeUp .9s .4s ease both;
+}
+.btn{
+  display:inline-block;text-decoration:none;
+  font-weight:400;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;
+  padding:14px 38px;border-radius:999px;transition:.3s;
+}
+.btn-primary{
+  background:var(--brown);color:#fff;
+  box-shadow:0 6px 28px rgba(122,79,69,.22);
+}
+.btn-primary:hover{background:#5f3b32;transform:translateY(-2px)}
+.btn-secondary{
+  background:#fff;color:var(--brown);
+  box-shadow:0 6px 20px rgba(122,79,69,.10);
+}
+.btn-secondary:hover{background:var(--cream);transform:translateY(-2px)}
+
+
+@media(max-width:480px){
+  .btn{padding:13px 28px}
+  .actions{gap:10px}
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(22px)}
+  to  {opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+<body>
+
+<!-- animated gradient orbs -->
+<div class="orbs" aria-hidden="true">
+  <div class="orb orb1"></div><div class="orb orb2"></div>
+  <div class="orb orb3"></div><div class="orb orb4"></div>
+  <div class="orb orb5"></div>
+</div>
+
+<!-- silk sheen -->
+<div class="sheen" aria-hidden="true"></div>
+
+<!-- floating 404-specific icons -->
+<div class="tools" aria-hidden="true">
+  <!-- broken / cracked window frame -->
+  <div class="tool t-window"><svg viewBox="0 0 100 100"><rect x="10" y="10" width="80" height="80" rx="2"/><line x1="50" y1="10" x2="50" y2="90"/><line x1="10" y1="50" x2="90" y2="50"/><path d="M50 50l8-12 5 8 6-6" stroke-dasharray="3 2"/></svg></div>
+  <!-- question mark blueprint -->
+  <div class="tool t-question"><svg viewBox="0 0 100 100"><path d="M36 36c0-12 8-20 20-20s20 8 20 20c0 10-8 14-18 20v8"/><circle cx="58" cy="78" r="3" fill="currentColor"/><circle cx="58" cy="78" r="3"/></svg></div>
+  <!-- broken chain link -->
+  <div class="tool t-chain"><svg viewBox="0 0 100 100"><rect x="12" y="38" width="36" height="22" rx="11" /><rect x="52" y="40" width="36" height="22" rx="11" /><line x1="44" y1="46" x2="56" y2="54" stroke-dasharray="4 3"/></svg></div>
+  <!-- door ajar -->
+  <div class="tool t-door"><svg viewBox="0 0 100 100"><path d="M20 92V12h50v80H20"/><path d="M70 12L58 18v66l12 8" stroke-dasharray="none"/><circle cx="64" cy="52" r="3" fill="currentColor"/><line x1="14" y1="92" x2="86" y2="92"/></svg></div>
+  <!-- map with missing pin -->
+  <div class="tool t-map"><svg viewBox="0 0 100 100"><path d="M15 20l22 8 26-10 22 8v56l-22-8-26 10-22-8V20"/><line x1="37" y1="28" x2="37" y2="84"/><line x1="63" y1="18" x2="63" y2="74"/><circle cx="63" cy="34" r="7"/><line x1="60" y1="28" x2="66" y2="40" stroke-dasharray="3 2"/></svg></div>
+  <!-- lost compass (needle spinning) -->
+  <div class="tool t-lostcompass"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="36"/><circle cx="50" cy="50" r="4" fill="currentColor"/><path d="M50 20l6 26H44ZM50 80l-4-20h8Z" stroke-dasharray="5 3"/><line x1="20" y1="50" x2="80" y2="50" stroke-dasharray="4 3" opacity=".5"/></svg></div>
+  <!-- unrolled blueprint scroll -->
+  <div class="tool t-scroll"><svg viewBox="0 0 100 100"><path d="M18 20c0-6 8-6 8 0v60c0 6 8 6 8 0"/><path d="M26 14h56v72H26"/><line x1="36" y1="30" x2="72" y2="30"/><line x1="36" y1="42" x2="60" y2="42"/><line x1="36" y1="54" x2="66" y2="54"/><line x1="36" y1="66" x2="54" y2="66" stroke-dasharray="4 3"/></svg></div>
+  <!-- warning triangle -->
+  <div class="tool t-warn"><svg viewBox="0 0 100 100"><path d="M50 12L92 86H8ZM50 46v20"/><circle cx="50" cy="76" r="3" fill="currentColor"/></svg></div>
+</div>
+
+<main>
+  <!-- blueprint sketch of a broken column -->
+  <div class="sketch" aria-hidden="true">
+    <svg viewBox="0 0 280 160">
+      <!-- grid lines -->
+      <line x1="0" y1="20" x2="280" y2="20"/><line x1="0" y1="40" x2="280" y2="40"/>
+      <line x1="0" y1="60" x2="280" y2="60"/><line x1="0" y1="80" x2="280" y2="80"/>
+      <line x1="0" y1="100" x2="280" y2="100"/><line x1="0" y1="120" x2="280" y2="120"/>
+      <line x1="0" y1="140" x2="280" y2="140"/>
+      <line x1="20" y1="0" x2="20" y2="160"/><line x1="40" y1="0" x2="40" y2="160"/>
+      <line x1="60" y1="0" x2="60" y2="160"/><line x1="80" y1="0" x2="80" y2="160"/>
+      <line x1="100" y1="0" x2="100" y2="160"/><line x1="120" y1="0" x2="120" y2="160"/>
+      <line x1="140" y1="0" x2="140" y2="160"/><line x1="160" y1="0" x2="160" y2="160"/>
+      <line x1="180" y1="0" x2="180" y2="160"/><line x1="200" y1="0" x2="200" y2="160"/>
+      <line x1="220" y1="0" x2="220" y2="160"/><line x1="240" y1="0" x2="240" y2="160"/>
+      <line x1="260" y1="0" x2="260" y2="160"/>
+      <!-- broken / unfinished column -->
+      <rect x="106" y="8" width="28" height="10" rx="1" stroke-width="1.6"/>
+      <rect x="110" y="18" width="20" height="90" rx="1" stroke-width="1.6"/>
+      <!-- crack -->
+      <path d="M118 50l4 8-4 7 5 6" stroke-width="1.6" stroke-dasharray="3 2"/>
+      <!-- broken top half floating -->
+      <rect x="110" y="2" width="20" height="6" rx="1" stroke-width="1.4" opacity=".5" transform="translate(2,-6) rotate(-4 120 4)"/>
+      <!-- base -->
+      <rect x="104" y="108" width="32" height="10" rx="1" stroke-width="1.6"/>
+      <rect x="98"  y="118" width="44" height="6"  rx="1" stroke-width="1.6"/>
+      <!-- dimension lines -->
+      <line x1="88" y1="18" x2="88" y2="108" stroke-dasharray="4 3"/>
+      <line x1="84" y1="18" x2="92" y2="18"/><line x1="84" y1="108" x2="92" y2="108"/>
+      <!-- label -->
+      <text x="68" y="66" font-family="Jost,sans-serif" font-size="8" fill="currentColor" opacity=".7">h</text>
+      <!-- arch ghost -->
+      <path d="M170 124V90A30 30 0 01230 90V124" stroke-width="1.4" stroke-dasharray="5 3"/>
+      <line x1="170" y1="124" x2="230" y2="124" stroke-width="1.4" stroke-dasharray="5 3"/>
+      <!-- compass circle ghost -->
+      <circle cx="60" cy="90" r="22" stroke-width="1.2" stroke-dasharray="4 3" opacity=".6"/>
+      <line x1="60" y1="68" x2="60" y2="112" stroke-width="1" stroke-dasharray="3 3" opacity=".5"/>
+      <line x1="38" y1="90" x2="82" y2="90" stroke-width="1" stroke-dasharray="3 3" opacity=".5"/>
+    </svg>
+  </div>
+
+  <div class="error-code">404</div>
+  <div class="divider"></div>
+  <h1>Blueprint Not Found</h1>
+  <p>This space hasn't been designed yet — or the plan has been moved. Let us guide you back to solid ground.</p>
+
+  <div class="actions">
+    <a class="btn btn-primary" href="index.html">← Back to Home</a>
+    <a class="btn btn-secondary" href="mailto:hello@arjunn.in">Contact Us</a>
+  </div>
+
+</main>
+</body>
+</html>
